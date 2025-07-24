@@ -47,7 +47,7 @@ app.use('/assignments', assignmentsRoute);
 app.use('/schedule', scheduleRoute);
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://jcdbUser:cms07232025@cms.12bjpza.mongodb.net/ckt-test?retryWrites=true&w=majority&appName=CMS',
+mongoose.connect('mongodb+srv://jcdbUser:*********@cms.12bjpza.mongodb.net/ckt-test?retryWrites=true&w=majority&appName=CMS',
    { useNewUrlParser: true })
    .then(() => {
       console.log('Connected to database!');
