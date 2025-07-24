@@ -1,0 +1,39 @@
+<div class="row align-items-center" *ngIf="student">
+  <div class="col-xs-12 col-sm-6 d-flex align-items-center">
+    <h1 class="mb-0">{{ student.firstName + ' ' + student.lastName }}</h1>
+  </div>
+
+  <div class="col-xs-12 col-sm-6 text-sm-end mt-3 mt-sm-0">
+    <div class="btn-group">
+      <a
+        [routerLink]="['/students', student.id, 'edit']"
+        routerLinkActive="active"
+        type="button"
+        class="btn btn-primary dropdown-toggle">Edit
+      </a>
+      <a
+        type="button"
+        class="btn btn-primary dropdown-toggle btn-danger"
+        (click)="deleteStudent()">Delete
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="!student">
+  <div class="col-xs-12">
+    <p class="text-muted">Please select a student from the list to view details.</p>
+  </div>
+</div>
+
+<hr *ngIf="student">
+
+<div class="row mt-3" *ngIf="student">
+  <div class="col-12">
+    <p><strong>Age:</strong> {{ student.age }}</p>
+    <p><strong>Level:</strong> {{ student.level }}</p>
+    <p><strong>Parent Name:</strong> {{ student.parentName + ' ' + '(' + student.parentRelationship + ')' }}</p>
+    <p><strong>Contact Phone:</strong> {{ student.parentPhone }}</p>
+    <p><strong>Contact Email:</strong> {{ student.parentEmail }}</p>
+  </div>
+</div>

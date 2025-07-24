@@ -1,0 +1,16 @@
+.list-group-item.selected {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.list-group-item.selected:hover {
+  background-color: #c4e3f3;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #f5f5f5;
+}

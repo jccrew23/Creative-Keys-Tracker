@@ -1,0 +1,18 @@
+.schedule-box {
+  min-height: 200px; /* or more depending on your data */
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.schedule-box h5 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.schedule-box .appointment {
+  margin-bottom: 8px;
+}

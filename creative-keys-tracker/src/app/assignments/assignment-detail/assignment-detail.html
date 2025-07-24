@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+  <div class="panel-heading clearfix">
+    <h4 class="title margin-left-right pull-left">
+      {{ (student?.firstName || '') + ' ' + (student?.lastName || '') }}
+    </h4>
+    <a [routerLink]="['/assignments', assignment?.id, 'edit']" class="btn btn-info pull-right margin-left-right">
+      Edit
+    </a>
+  </div>
+</div>
+  <div class="panel-body">
+    <div class="pad-left-right">
+
+      <div class="row">
+        <label>Warm Up:</label>
+        <span class="label-value">{{assignment?.warmUpName}}</span>
+        <br>
+        <span class="label-value">{{assignment?.warmUpNotes}}</span>
+      </div>
+
+      <br>
+      <div class="row">
+        <label>Technique Page:</label>
+        <span class="label-value">{{assignment?.techniquePage}}</span>
+        <br>
+        <span class="label-value">{{assignment?.techniqueNotes}}</span>
+      </div>
+
+      <br>
+      <div class="row">
+        <label>Performance Page:</label>
+        <span class="label-value">{{assignment?.performancePage}}</span>
+        <br>
+        <span class="label-value">{{assignment?.performanceNotes}}</span>
+      </div>
+
+      <br>
+      <div class="row">
+        <label>Theory Page:</label>
+        <span class="label-value">{{assignment?.theoryPage}}</span>
+        <br>
+        <span class="label-value">{{assignment?.theoryNotes}}</span>
+      </div>
+
+      <br>
+      <div class="row">
+        <label>Additional Notes:</label>
+        <span class="label-value">{{assignment?.additionalNotes}}</span>
+      </div>
+    </div>
+  </div>
+

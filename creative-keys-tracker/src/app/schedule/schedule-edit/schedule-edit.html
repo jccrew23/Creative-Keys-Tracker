@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Add Appointment</h4>
+  </div>
+  <div class="panel-body">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="student">Student</label>
+        <select class="form-control" id="student" [(ngModel)]="selectedStudentId" name="studentId" required>
+          <option value="" disabled selected>Select a student</option>
+          <option *ngFor="let student of students" [value]="student.id">
+            {{ student.firstName }} {{ student.lastName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="day">Day</label>
+        <select class="form-control" id="day" [(ngModel)]="selectedDay" name="day">
+          <option value="" disabled selected>Select a day</option>
+          <option *ngFor="let day of ['Monday','Tuesday','Wednesday','Thursday','Friday']">
+            {{ day }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" class="form-control" id="time" [(ngModel)]="selectedTime" name="time" required />
+      </div>
+
+      <button type="submit" class="btn btn-success">Add</button>
+    </form>
+  </div>
+</div>

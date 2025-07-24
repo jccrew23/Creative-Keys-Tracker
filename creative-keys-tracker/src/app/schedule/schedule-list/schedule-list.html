@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-2" *ngFor="let day of weekdays">
+    <div class="well well-sm schedule-box">
+      <h5 class="text-center"><strong>{{ day }}</strong></h5>
+      <app-schedule-item
+        [appointments]="getAppointmentsForDay(day)"
+        [day]="day">
+      </app-schedule-item>
+    </div>
+  </div>
+</div>

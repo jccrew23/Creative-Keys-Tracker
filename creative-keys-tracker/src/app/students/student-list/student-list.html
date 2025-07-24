@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <span class="title pad-left-right">Students</span>
+    </div>
+    <div class="row">
+      <div class="col-xs-7 pad-left-right">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="term" placeholder="Search Students">
+          <span class="input-group-addon" (click)="search(term)">
+            <i class="glyphicon glyphicon-search"></i>
+          </span>
+        </div>
+      </div>
+      <div class="col-xs-5 text-right pad-left-right">
+        <a class="btn btn-success" [routerLink]="['new']">New Student</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-student-item
+          *ngFor="let studentEl of students | studentFilter:term"
+          [student]="studentEl">
+        </app-student-item>
+      </div>
+    </div>
+  </div>
+</div>

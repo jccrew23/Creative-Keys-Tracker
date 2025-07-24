@@ -1,0 +1,182 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form
+      id="contact-edit"
+      (ngSubmit)="onSubmit(f)"
+      #f="ngForm"
+      class="form-horizontal"
+    >
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            class="form-control required"
+            size="120"
+            max="120"
+            [(ngModel)]="student.firstName"
+            #firstNameInput="ngModel"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            class="form-control required"
+            size="120"
+            max="120"
+            [(ngModel)]="student.lastName"
+            #lastNameInput="ngModel"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="age">Age:</label>
+          <input
+            type="text"
+            id="age"
+            name="age"
+            class="form-control required"
+            size="120"
+            max="255"
+            [(ngModel)]="student.age"
+            #ageInput="ngModel"
+            required
+            pattern="[0-9]*"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="level">Level:</label>
+          <input
+            type="text"
+            id="level"
+            name="level"
+            class="form-control required"
+            size="120"
+            max="255"
+            [(ngModel)]="student.level"
+            #levelInput="ngModel"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="age">Parent Name:</label>
+          <input
+            type="text"
+            id="parentName"
+            name="parentName"
+            class="form-control required"
+            size="120"
+            max="255"
+            [(ngModel)]="student.parentName"
+            #parentNameInput="ngModel"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="parentRelationship">Parent Relationship:</label>
+          <input
+            type="text"
+            id="parentRelationship"
+            name="parentRelationship"
+            class="form-control required"
+            size="120"
+            max="255"
+            [(ngModel)]="student.parentRelationship"
+            #parentRelationshipInput="ngModel"
+          />
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="parentPhone">Phone:</label>
+          <input
+            type="text"
+            id="parentPhone"
+            name="parentPhone"
+            class="form-control invalid"
+            size="150"
+            max="255"
+            [(ngModel)]="student.parentPhone"
+            #parentPhoneInput="ngModel"
+            pattern="[0-9]{10}"
+            required
+          />
+        </div>
+      </div>
+
+      <div
+        *ngIf="parentPhoneInput.invalid && parentPhoneInput.touched"
+        class="alert alert-danger"
+      >
+        <p>Enter a valid Phone number</p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="parentEmail">Email:</label>
+          <input
+            type="email"
+            id="parentEmail"
+            name="parentEmail"
+            class="form-control required"
+            size="150"
+            max="255"
+            [(ngModel)]="student.parentEmail"
+            #parentEmailInput="ngModel"
+            required
+          />
+        </div>
+      </div>
+      <div
+        *ngIf="parentEmailInput.invalid && parentEmailInput.touched"
+        class="alert alert-danger"
+      >
+        <p>Enter a valid Email address</p>
+      </div>
+
+      <div
+        *ngIf="
+          (firstNameInput.invalid || parentEmailInput.invalid) &&
+          (firstNameInput.touched || parentEmailInput.touched)
+        "
+        class="alert alert-danger"
+      >
+        <p>The Name and Email are required fields.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success" type="submit" [disabled]="f.invalid">
+            Save
+          </button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

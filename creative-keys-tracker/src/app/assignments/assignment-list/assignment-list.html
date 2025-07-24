@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row pad-left-right">
+      <span class="pull-left title">Weekly Assignments</span>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="center-panel">
+      <app-assignment-item
+      *ngFor="let assignment of assignments; let i = index"
+        [assignment] ="assignment">
+      </app-assignment-item>
+    </div>
+  </div>
+
+</div>

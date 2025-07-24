@@ -1,0 +1,11 @@
+<div *ngIf="appointments.length > 0; else noAppts">
+  <div *ngFor="let appt of appointments" class="appointment clearfix">
+    <strong>{{ formatTime(appt.time) }}</strong> <br> {{ getStudentName(appt.studentId) }}
+    <span class="pull-right text-danger" style="cursor:pointer;" (click)="removeAppointment(appt.id)">
+      <i class="glyphicon glyphicon-trash"></i>
+    </span>
+  </div>
+</div>
+<ng-template #noAppts>
+  <p class="text-muted">No appointments</p>
+</ng-template>
